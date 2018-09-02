@@ -5,3 +5,11 @@ In Jupyter notebook author presents the results of work related to the problem o
 ![3](https://user-images.githubusercontent.com/21131348/44955960-623c3e00-aebc-11e8-8e18-ad11f80edc63.png)
 
 
+## Results
+
+### Learning curve
+![zrzut ekranu 2018-09-2 o 14 49 43](https://user-images.githubusercontent.com/21131348/44956148-982ef180-aebf-11e8-8df3-7110847d172e.png)
+
+### Confusion Matrix 
+![zrzut ekranu 2018-09-2 o 14 57 27](https://user-images.githubusercontent.com/21131348/44956206-8d289100-aec0-11e8-8ede-6f4cd2eef44a.png)
+
