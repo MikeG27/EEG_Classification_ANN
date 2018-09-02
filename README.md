@@ -8,7 +8,7 @@ In Jupyter notebook author presents the results of work related to the problem o
 ## Results
 
 ### Learning curve
-![zrzut ekranu 2018-09-2 o 14 49 43](https://user-images.githubusercontent.com/21131348/44956148-982ef180-aebf-11e8-8df3-7110847d172e.png)
+![zrzut ekranu 2018-09-2 o 15 06 54](https://user-images.githubusercontent.com/21131348/44956294-096fa400-aec2-11e8-99c0-3d79ab644d3c.png)
 
 ### Confusion Matrix 
 ![zrzut ekranu 2018-09-2 o 15 01 23](https://user-images.githubusercontent.com/21131348/44956245-340d2d00-aec1-11e8-8437-3c3b7fcdc2a8.png)
