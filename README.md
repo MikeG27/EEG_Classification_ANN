@@ -24,10 +24,11 @@ Problem definition : Implementation of the neural network model in order to cont
 ## BCI based system
 ![bci_system](https://user-images.githubusercontent.com/21131348/45600845-af172d00-ba03-11e8-8d69-a19c1f0ad02f.png)
 
-## Results
+## Artificial Neural Network
 
 ### Learning curve
-![zrzut ekranu 2018-09-2 o 15 12 57](https://user-images.githubusercontent.com/21131348/44956359-ef829100-aec2-11e8-87ac-5606471e19bd.png)
+![zrzut ekranu 2018-09-19 o 19 12 05](https://user-images.githubusercontent.com/21131348/45769773-e0c90780-bc40-11e8-85d8-c1741e8532d7.png)
+
 
 ### Confusion Matrix 
 ![zrzut ekranu 2018-09-2 o 15 01 23](https://user-images.githubusercontent.com/21131348/44956245-340d2d00-aec1-11e8-8437-3c3b7fcdc2a8.png)
