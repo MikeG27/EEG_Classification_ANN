@@ -15,10 +15,10 @@ Problem definition : Implementation of the neural network model in order to cont
  
 ## Used models
 
-* **K-nearest neighbors algorithm**, test acc : 0,9933
+* **K-nearest neighbors algorithm**, test acc : 0.9933
 * **Artificial Neural Network**, test acc :  0.9775
-* **Support Vector Machine 1vs1 approach**, test acc : 94.5923
-* **Linear discriminant analyzis**, test acc : 71.04825
+* **Support Vector Machine 1vs1 approach**, test acc : 0.9459
+* **Linear discriminant analyzis**, test acc : 0.7104
 
 
 ## BCI based system
