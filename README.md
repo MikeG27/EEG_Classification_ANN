@@ -24,7 +24,7 @@ Problem definition : Implementation of the neural network model in order to cont
 ## BCI based system
 ![bci_system](https://user-images.githubusercontent.com/21131348/45600845-af172d00-ba03-11e8-8d69-a19c1f0ad02f.png)
 
-## Artificial Neural Network
+## Artificial Neural Network - 97,7%
 
 ### Learning curve
 ![zrzut ekranu 2018-09-19 o 19 12 05](https://user-images.githubusercontent.com/21131348/45769773-e0c90780-bc40-11e8-85d8-c1741e8532d7.png)
@@ -38,7 +38,7 @@ Problem definition : Implementation of the neural network model in order to cont
 
 ![zrzut ekranu 2018-09-19 o 19 11 37](https://user-images.githubusercontent.com/21131348/45769908-42897180-bc41-11e8-8f56-a9a4893371e8.png)
 
-## K-nearest neighbors
+## K-nearest neighbors - 99,3%
 
 ### Neighbors test
 
