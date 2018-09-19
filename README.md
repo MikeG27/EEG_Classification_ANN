@@ -10,8 +10,8 @@ Problem definition : Implementation of the neural network model in order to cont
 
 * **Problem type** : Multiclass clasiffication
 * **Number of features** : 12 electrodes
-* **Number of classes** : 4 facial expressions
-* **Classes type**  : "eyes_closed, eyebrows, smile, teeth"
+* **Number of class** : 4 facial expressions
+* **Class type**  : "eyes_closed, eyebrows, smile, teeth"
  
 ## Used models
 
