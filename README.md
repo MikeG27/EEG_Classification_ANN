@@ -31,6 +31,19 @@ Problem definition : Implementation of the neural network model in order to cont
 
 
 ### Confusion Matrix 
-![zrzut ekranu 2018-09-2 o 15 01 23](https://user-images.githubusercontent.com/21131348/44956245-340d2d00-aec1-11e8-8437-3c3b7fcdc2a8.png)
+![zrzut ekranu 2018-09-19 o 19 12 42](https://user-images.githubusercontent.com/21131348/45769849-13730000-bc41-11e8-91fb-ffcf4a8cf3ba.png)
 
 
+### Classification report
+
+![zrzut ekranu 2018-09-19 o 19 11 37](https://user-images.githubusercontent.com/21131348/45769908-42897180-bc41-11e8-8f56-a9a4893371e8.png)
+
+## K-nearest neighbors
+
+### Neighbors test
+
+![zrzut ekranu 2018-09-19 o 19 11 26](https://user-images.githubusercontent.com/21131348/45769983-7ebcd200-bc41-11e8-92fd-98abd6de0a36.png)
+
+### Classification report
+
+![zrzut ekranu 2018-09-19 o 19 12 58](https://user-images.githubusercontent.com/21131348/45770038-95fbbf80-bc41-11e8-9ff2-4a4f74d65c17.png)
