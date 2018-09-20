@@ -9,7 +9,7 @@ In Jupyter notebook author presents the results of work related to the problem o
 Problem definition : Implementation of the neural network model in order to control based on facial expressions. 
 
 * **Problem type** : Multiclass clasiffication
-* **Number of features** : 12 electrodes
+* **Number of features** : 14 electrodes
 * **Number of class** : 4 facial expressions
 * **Class type**  : "eyes_closed, eyebrows, smile, teeth"
  
