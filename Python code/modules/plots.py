@@ -89,7 +89,7 @@ def plot_confusion_matrix(model,X_test,y_pred,y_test,save_fig,name ):
     y_test = np.argmax(y_test,axis = 1)
     cnf_matrix = confusion_matrix(y_test,y_pred)
 
-    plt.figure(figsize=(12,12))
+    plt.figure(figsize=(20,12))
     plt.subplot(1,2,1)
     plt.title("Confusion Matrix")
     sns.heatmap(cnf_matrix,annot = True, xticklabels=class_names,
@@ -105,4 +105,31 @@ def plot_confusion_matrix(model,X_test,y_pred,y_test,save_fig,name ):
     
     if save_fig:
         plt.savefig(save_fig + str("/") + str(name))
+        
+    
+def test_neighbors(X_train,X_test,y_train,y_test): 
+    
+    from sklearn.neighbors import KNeighborsClassifier
+    
+    training_accuracy = []
+    test_accuracy = []
+    
+    neighbors_settings = range(1, 11)
+      
+    for n_neighbors in neighbors_settings:
+        
+        KNN = KNeighborsClassifier(n_neighbors=n_neighbors)
+        KNN.fit(X_train, y_train)
+        training_accuracy.append(KNN.score(X_train, y_train))
+        test_accuracy.append(KNN.score(X_test, y_test))
+    
+    plt.figure(figsize=(15,5))
+    plt.plot(neighbors_settings, training_accuracy, label="training accuracy")
+    plt.plot(neighbors_settings, test_accuracy, label="test accuracy")
+    plt.ylabel("Accuracy")
+    plt.xlabel("n_neighbors")
+    plt.legend()
+    
+    print(type(test_accuracy))
+
         
