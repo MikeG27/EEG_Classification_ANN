@@ -11,7 +11,7 @@ import numpy as np
 import seaborn as sns
 import os
 
-sns.set()
+
 
 def plot_feature_signal(feature_csv,save_fig,name,title_size = 15, figsize = (10,5),ylim = (3750,4750)):
     
@@ -30,16 +30,14 @@ def plot_feature_signal(feature_csv,save_fig,name,title_size = 15, figsize = (10
     plt.xlabel("Samples")
     plt.ylabel('Voltage [μV]')
     plt.ylim(ylim)
-    #plt.grid()
+    plt.grid()
     fig.suptitle(name + str(" EEG"),fontsize = title_size)
     
     while counter < len(nameArray) : 
         plt.plot(feature_csv[:,counter],label = nameArray[counter])
         plt.legend()
-        counter = counter + 1 
-    
-    plt.show()
-    
+        counter = counter + 1
+
     if save_fig :
         plt.savefig(save_fig + str("/") + str(name))
             
@@ -64,18 +62,21 @@ def plot_training(history,save_fig,name,val = True,):
     plt.plot(epochs, acc, 'b', label='Training acc')
     plt.plot(epochs, val_acc, 'g', label='Validation acc')
     plt.title('Training and validation accuracy')
+    plt.grid()
     plt.legend()
 
     plt.subplot(2,1,2)
     plt.plot(epochs, loss, 'b', label='Training loss')
     plt.plot(epochs, val_loss, 'g', label='Validation loss')
     plt.title('Training and validation loss')
+    plt.grid()
     plt.legend()
 
-    plt.show()
     
     if save_fig:
          plt.savefig(save_fig + str("/") + str(name))
+
+    plt.show()
         
   
         
@@ -108,7 +109,7 @@ def plot_confusion_matrix(model,X_test,y_pred,y_test,save_fig,name ):
         
     
 def test_neighbors(X_train,X_test,y_train,y_test): 
-    
+    # TODO : Niech zwraca najlepsza liczbe sasiadow na tescie
     from sklearn.neighbors import KNeighborsClassifier
     
     training_accuracy = []
@@ -129,7 +130,8 @@ def test_neighbors(X_train,X_test,y_train,y_test):
     plt.ylabel("Accuracy")
     plt.xlabel("n_neighbors")
     plt.legend()
+    plt.show()
     
-    print(type(test_accuracy))
+    #print(type(test_accuracy))
 
         
