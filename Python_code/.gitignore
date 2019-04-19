@@ -1,0 +1,6 @@
+dataset/
+plots/
+saved_models/
+tpot_eeg_pipeline.py
+../.idea/
+.idea/
