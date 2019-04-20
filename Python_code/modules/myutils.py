@@ -10,6 +10,7 @@ import os
 import zipfile
 import shutil
 import pandas as pd
+
 from sklearn.utils import shuffle
 
 
@@ -74,6 +75,8 @@ def save_data(subjects,folder):
 
 
 def preprocess_subject_data(data_dir,no_signal_max):
+
+    #TODO : Porozbijać to trochę :)
     
     """
     Preprocess data from each subject,
@@ -122,30 +125,6 @@ def preprocess_subject_data(data_dir,no_signal_max):
         data[subject] = subject_csv 
     
     return data, class_dictionary
-
-
-def preprocess_to_training(subject_data,test_set_size):
-    
-    X = subject_data.iloc[: ,0:14].values
-    y = subject_data.iloc[: ,-1].values
-        
-    #Encoding categorical data 
-    from sklearn.preprocessing import LabelEncoder
-    encoder = LabelEncoder()
-    encoder.fit(y).transform(y)
-
-    
-    #Splitting dataSet into the training set and test set
-    from sklearn.model_selection import train_test_split
-    X_train, X_test, y_train, y_test = train_test_split(X,y,test_size = test_set_size, random_state = 0)
-    
-    
-    from sklearn.preprocessing import StandardScaler
-    sc_x = StandardScaler()
-    X_train = sc_x.fit_transform(X_train)
-    X_test = sc_x.transform(X_test)
-
-    return X_train,X_test,y_train,y_test
 
 
 
