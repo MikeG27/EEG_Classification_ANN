@@ -6,27 +6,24 @@ Created on Sat Sep 15 18:22:56 2018
 @author: michal
 """
 
-import shap
 import os
 import pandas_profiling
+
+import modules.preprocessing
+import config
+from config import MAIN_DIR, PLOTS_DIR, DATA_DIR, DATA_RAW_DIR, DATA_PREPROCESSED_DIR, DATA_REPORTS
 from modules import myutils, plots
 from modules import models
 
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import accuracy_score
+from sklearn.cluster import KMeans
 
 from tpot import TPOTClassifier
 
-MAIN_DIR = os.getcwd()
-PLOTS_DIR = os.path.join(MAIN_DIR, "plots")
-DATA_DIR = os.path.join(MAIN_DIR, "dataset")
-DATA_RAW_DIR = os.path.join(DATA_DIR, "raw")
-DATA_PREPROCESSED_DIR = os.path.join(DATA_DIR, "preprocessed")
-DATA_REPORTS = os.path.join(DATA_DIR, "reports")
-
 
 def perform_dir_operations():
-    os.chdir(MAIN_DIR)
+    os.chdir(config.MAIN_DIR)
     myutils.make_dir(PLOTS_DIR)
     myutils.make_dir(DATA_DIR)
     myutils.make_dir(DATA_RAW_DIR)
@@ -55,13 +52,13 @@ def plot_subjects_EEG(preprocessedCSV):
 def feature_selection(subjects):
     for id, subject in enumerate(subjects.values()):
         report = pandas_profiling.ProfileReport(subject)
-        report.to_file(outputfile=f"{DATA_REPORTS}/subject{id+1}.html")
+        report.to_file(outputfile=f"{DATA_REPORTS}/subject{id + 1}.html")
         rejected_variables = report.get_rejected_variables(threshold=0.9)
         subject.drop(rejected_variables, axis=1, inplace=True)
 
 
 def run_TPOT(subject):
-    X_train, X_test, y_train, y_test = myutils.preprocess_to_training(subject, 0.3)
+    X_train, X_test, y_train, y_test = modules.preprocessing.process_to_training(subject, 0.3)
     tpot = TPOTClassifier(generations=5, population_size=20, verbosity=2)
     tpot.fit(X_train, y_train)
     print(tpot.score(X_test, y_test))
@@ -69,9 +66,8 @@ def run_TPOT(subject):
 
 
 def Train_KNN(subject):
-    X_train, X_test, y_train, y_test = myutils.preprocess_to_training(subject, 0.3)
-    plots.test_neighbors(X_train, X_test, y_train, y_test)  #
-    # the best numer of neigbours is 1 so..
+    X_train, X_test, y_train, y_test = modules.preprocessing.process_to_training(subject, 0.3)
+    plots.test_neighbors(X_train, X_test, y_train, y_test)
     KNN = KNeighborsClassifier(n_neighbors=1)
     KNN.fit(X_train, y_train)
     KNN_pred = KNN.predict(X_test)
@@ -81,7 +77,7 @@ def Train_KNN(subject):
 
 def Train_ANN(subject):
     # Preprocess data
-    X_train, X_test, y_train, y_test = myutils.preprocess_to_training(subject, test_set_size=0.3)
+    X_train, X_test, y_train, y_test = modules.preprocessing.process_to_training(subject, test_set_size=0.3)
     # Get model and train
     model = models.get_model()
     model.summary()
@@ -96,15 +92,34 @@ def Train_ANN(subject):
     plots.plot_confusion_matrix(model, X_test, y_pred, y_test, PLOTS_DIR, "confusion matrix")
 
 
+def run_clustering_kmeans(subject):
+    # Do doczytania
+    X_train, X_test, y_train, y_test = modules.preprocessing.process_to_training(subject, test_set_size=0.3)
+    model = KMeans(n_clusters=4)
+
+    # Fitting Model
+    model.fit(X_train)
+
+    # Prediction on the entire data
+    y_pred = model.predict(X_test)
+
+    evaluation_Kmeans = (accuracy_score(y_test, y_pred)) * 100
+    print(f"Kmeans accuracy: {evaluation_Kmeans}")
+
+    # Printing Predictions
+    print(y_pred)
+    print(y_test)
+
+
 def run_preprocessing():
     perform_dir_operations()
     class_treshold = get_class_treshold()
     preprocessedCSV, class_dictionary = myutils.preprocess_subject_data(DATA_RAW_DIR, class_treshold)
     plot_subjects_EEG(preprocessedCSV)
-    #plot_corelation_matrix
+    # plot_corelation_matrix
     feature_selection(preprocessedCSV)
-    preprocessedCSV = myutils.shuffle_data(preprocessedCSV)
-    myutils.save_data(preprocessedCSV,DATA_PREPROCESSED_DIR)
+    # preprocessedCSV = myutils.shuffle_data(preprocessedCSV)
+    myutils.save_data(preprocessedCSV, DATA_PREPROCESSED_DIR)
     print("Data preprocessing was completed")
 
     # opcja do zapisywania plików w folderze raw
@@ -113,11 +128,12 @@ def run_preprocessing():
 def run_classification():
     subject = "subject1"
     subject = myutils.open_csv(DATA_PREPROCESSED_DIR + "/" + str(subject) + ".csv")
-    #run_TPOT(subject)
+    # run_TPOT(subject)
+    run_clustering_kmeans(subject)
     # Train_KNN(subject)
     # TRAIN_ANN(subject)
 
-if __name__ == "__main__":
-    #run_preprocessing()
-    run_classification()
 
+if __name__ == "__main__":
+    run_preprocessing()
+    # run_classification()
