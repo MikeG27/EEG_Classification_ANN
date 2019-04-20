@@ -67,7 +67,7 @@ def run_TPOT(subject):
 
 def Train_KNN(subject):
     X_train, X_test, y_train, y_test = modules.preprocessing.process_to_training(subject, 0.3)
-    plots.test_neighbors(X_train, X_test, y_train, y_test)
+    plots.test_neighbors(X_train, X_test, y_train, y_test) #dodać żeby zwracało optymalną liczbę sąsiadów dla tego algorytmu :)
     KNN = KNeighborsClassifier(n_neighbors=1)
     KNN.fit(X_train, y_train)
     KNN_pred = KNN.predict(X_test)
