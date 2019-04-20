@@ -1,0 +1,6 @@
+from google_drive_downloader import GoogleDriveDownloader as gdd
+
+gdd.download_file_from_google_drive(file_id='1tbVjQjOl0O96gMbV23Lnk_cH97lWS3og',
+                                    dest_path=os.getcwd(),
+                                    unzip=False)
+
