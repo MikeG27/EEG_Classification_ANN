@@ -4,6 +4,10 @@ In Jupyter notebook author presents the results of work related to the problem o
 
 ![3](https://user-images.githubusercontent.com/21131348/44955960-623c3e00-aebc-11e8-8e18-ad11f80edc63.png)
 
+
+## BCI based system
+![bci_system](https://user-images.githubusercontent.com/21131348/45600845-af172d00-ba03-11e8-8d69-a19c1f0ad02f.png)
+
 ## Problem Overview 
 
 Problem definition : Implementation of the neural network model in order to control based on facial expressions. 
@@ -14,8 +18,6 @@ Problem definition : Implementation of the neural network model in order to cont
 * **Class type**  : "eyes_closed, eyebrows, smile, teeth"
  
 
-## BCI based system
-![bci_system](https://user-images.githubusercontent.com/21131348/45600845-af172d00-ba03-11e8-8d69-a19c1f0ad02f.png)
 
 ## Artificial Neural Network TEST ACCURACY - 100%
 
