@@ -17,7 +17,7 @@ Problem definition : Implementation of the neural network model in order to cont
 ## BCI based system
 ![bci_system](https://user-images.githubusercontent.com/21131348/45600845-af172d00-ba03-11e8-8d69-a19c1f0ad02f.png)
 
-## Artificial Neural Network - 97,7%
+## Artificial Neural Network TEST ACCURACY - 100%
 
 ### Learning curve
 ![training](https://user-images.githubusercontent.com/21131348/57180203-b56cf300-6e86-11e9-8bd0-2bab2b2710ff.png)
