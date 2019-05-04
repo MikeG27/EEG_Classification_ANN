@@ -27,7 +27,7 @@ def get_model():
     # Adding the input layer and the first hidden layer
     model = Sequential()
     
-    model.add(Dense(units = 128, kernel_initializer = 'uniform', activation = 'relu', input_dim = 14))
+    model.add(Dense(units = 128, kernel_initializer = 'uniform', activation = 'relu', input_dim = 13))
     model.add(BatchNormalization())
     model.add(Dropout(0.2))
     model.add(Dense(units = 64, kernel_initializer = 'uniform', activation = 'relu'))
@@ -44,7 +44,7 @@ def get_model():
     model.add(Dense(units = 8, kernel_initializer = 'uniform', activation = 'relu'))
     model.add(BatchNormalization())
     model.add(Dropout(0.3))
-    model.add(Dense(units = 4, kernel_initializer = 'uniform', activation = 'softmax'))
+    model.add(Dense(units = 5, kernel_initializer = 'uniform', activation = 'softmax'))
     model.compile(optimizer = 'adam', loss = 'categorical_crossentropy', metrics = ['accuracy'])
      
     return model
