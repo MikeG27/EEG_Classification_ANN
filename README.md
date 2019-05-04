@@ -13,13 +13,6 @@ Problem definition : Implementation of the neural network model in order to cont
 * **Number of class** : 4 facial expressions
 * **Class type**  : "eyes_closed, eyebrows, smile, teeth"
  
-## Used models
-
-* **K-nearest neighbors algorithm**, test acc : 0.9933
-* **Artificial Neural Network**, test acc :  0.9775
-* **Support Vector Machine 1vs1 approach**, test acc : 0.9459
-* **Linear discriminant analyzis**, test acc : 0.7104
-
 
 ## BCI based system
 ![bci_system](https://user-images.githubusercontent.com/21131348/45600845-af172d00-ba03-11e8-8d69-a19c1f0ad02f.png)
