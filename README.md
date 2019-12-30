@@ -17,14 +17,3 @@ Problem definition : Implementation of the neural network model in order to cont
 * **Number of class** : 4 facial expressions
 * **Class type**  : "eyes_closed, eyebrows, smile, teeth"
  
-
-
-## Artificial Neural Network TEST ACCURACY - 100%
-
-### Learning curve
-![training](https://user-images.githubusercontent.com/21131348/57180203-b56cf300-6e86-11e9-8bd0-2bab2b2710ff.png)
-
-
-
-### Confusion Matrix 
-![confusion matrix](https://user-images.githubusercontent.com/21131348/57180187-8bb3cc00-6e86-11e9-9e2b-2e812310e083.png)
