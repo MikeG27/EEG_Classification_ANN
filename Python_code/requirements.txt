@@ -84,7 +84,7 @@ seaborn==0.9.0
 Send2Trash==1.5.0
 six==1.12.0
 stopit==1.1.2
-tensorflow-gpu==1.5.0
+tensorflow-gpu==1.15.0
 tensorflow-tensorboard==1.5.1
 terminado==0.8.1
 testpath==0.4.2
